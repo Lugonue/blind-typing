@@ -1,8 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
+import textReducer from  '../features/text-for-typing/innerTextSlice';
+import InputTextReduser from '../features/InputText/InputTextSlice';
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    startText: textReducer,
+    inputText: InputTextReduser,
   },
 });
