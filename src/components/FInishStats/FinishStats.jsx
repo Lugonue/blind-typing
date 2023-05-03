@@ -14,10 +14,8 @@ const FinishStats = () => {
   const dispatch = useDispatch();
 
   const resetHandler = () => {
-    console.log('reset');
     dispatch(setReset());
     dispatch(setText(''));
-    
   }
 
   return (
