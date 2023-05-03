@@ -1,0 +1,21 @@
+.finishStatsContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(48, 90, 74, 0.6);
+}
+
+.finishStats {
+  width: 30%;
+  height: 30%;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+}
+

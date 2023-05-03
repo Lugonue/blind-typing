@@ -4,14 +4,26 @@
 
 }
 
+* {
+  font-family: 'Sigmar';
+}
+
 main {
   margin: 0;
   padding: 0;
   width: 100vw;
   height: 100vh;
   box-sizing: border-box;
-  background: #999292;
+  background: #e6e7e1;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.statisticField {
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -19,26 +31,30 @@ main {
 .container {
   display: flex;
   margin: 0 10%;
-  border: #999292 1px solid;
+  border: #887f7f 1px solid;
   padding: 10px 20px;
   border-radius: 30px;
-  background-color: rgb(222, 215, 207);
+  background-color: rgb(245, 245, 245);
+  border: none;
+  box-shadow: 0px 0px 30px 0px rgb(30, 45, 7);
+  position: relative;
 }
 
 .textСontainer{
   width: 100%;
   height: 100%;
-  font-family: Sigmar;
   font-size: 24px;
-  color: #060606;
+  color: #6c6868;
   font-weight: 600;
   opacity: 0.8;
 }
 
 .alarm {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 40%;
+  left: 40%;
   font-size: 24px;
   background-color: #dc1717;
+  padding: 10px 20px;
+  border-radius: 30px;
 }

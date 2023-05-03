@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  text: null,
+  text: '',
+  typePerMinute: 0,
 }
 
 
@@ -11,10 +12,13 @@ const slice = createSlice({
   reducers: {
     setText: (state, action) => {
       state.text = action.payload;
+    },
+    setTypePerMinute: (state, action) => {
+      state.typePerMinute = action.payload;
     }
   }
 })
 
 
-export const { setText } = slice.actions;
+export const { setText, setTypePerMinute } = slice.actions;
 export default slice.reducer;

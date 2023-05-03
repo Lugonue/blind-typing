@@ -1,8 +1,12 @@
-
+import { useDispatch } from "react-redux";
+import {setStopTimer} from "./StatisticBar/timer/TimerSlice";
 
 const genDiff = (expected, actual) => {
   if (!expected || !actual) return true;
-  console.log(expected.slice(0, actual.length), actual);
+  if (expected === actual) {
+    
+    return 'final';
+  } 
   return expected.slice(0, actual.length) === actual;
 }
 

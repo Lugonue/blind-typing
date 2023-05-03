@@ -1,24 +1,36 @@
 import { useDispatch, useSelector } from "react-redux";
 import styles from "./InputText.module.css";
 import { setText } from "./InputTextSlice";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
-const InputText = () => {
+const InputText = ( {alarm}) => {
+
+  const textInput = useSelector(state => state.inputText.text);
+
   const dispatch = useDispatch();
+  const input = useRef(null);
+
   const textHandler = (e) => {
-    dispatch(setText(e.target.value));
+    let value = e.target.value;
+    if (alarm && value.length > textInput.length) {
+      value = value.slice(0, -1);
+    } else if (!alarm && value.length < textInput.length) {
+      return;
+    }
+    dispatch(setText(value));
   }
 
+  const blureHandler = () => {
+    input.current.focus();
+  }
 
-  // const inputText = useSelector(state => state.inputText.text);
-
-  // useEffect(() => {
-  //   console.log(inputText);
-  // }, [inputText])
+  useEffect(() => {
+    input.current.focus();
+  }, [])
 
   return (
     <div className={styles.imputTextContainer}>
-      <textarea className={styles.InputText} type="text" onChange={textHandler} />
+      <input ref={input} value={textInput} className={styles.InputText} type="text" onChange={textHandler} onBlur={blureHandler} />
     </div>
 
   )
