@@ -36,7 +36,7 @@ const StatisticBar = () => {
         <br />
         <span>Точность</span>
         <br />
-        { inputText.lenght > 0 ? <span>{100 - ( misses / inputText.length * 100).toFixed(0)} %</span> : <span>0 %</span>}
+        { inputText.length > 0 ? <span>{100 - ( misses / inputText.length * 100).toFixed(0)} %</span> : <span>0 %</span>}
       </div>
     </div>
   )

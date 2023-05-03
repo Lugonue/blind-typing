@@ -22,10 +22,15 @@ const timerSlice = createSlice({
     },
     setStopTimer: (state) => {
       state.status = 'finish';
+    },
+    setReset: (state) => {
+      state.currentTime = {minutes: 0, seconds: 0};
+      state.startTime = null;
+      state.status = 'stop';
     }
   },
 })
 
 
-export const { setTime, setStartTime, setStopTimer } = timerSlice.actions;
+export const { setTime, setStartTime, setStopTimer, setReset } = timerSlice.actions;
 export default timerSlice.reducer;

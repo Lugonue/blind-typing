@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { setStartTime } from "./StatisticBar/timer/TimerSlice";
+import { setStartTime } from "../StatisticBar/timer/TimerSlice";
 import styles from "./StartBtn.module.css";
 
 

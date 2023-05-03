@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from 'react-redux';
+import styles from "./Home.module.css";
+
 import InputText from "../features/InputText/InputText";
 import StartText from "../features/text-for-typing/StartText";
-import styles from "./Home.module.css";
 import genDiff from "./genDiff";
 import StatisticBar from "./StatisticBar/StatisticBar";
-import StartButn from "./StartButn";
-import EndButn from "./EndButn";
+import StartButn from "./Buttons/StartButn";
+import EndButn from "./Buttons/EndButn";
 import FinishStats from "./FInishStats/FinishStats";
 
 import { setStopTimer } from "./StatisticBar/timer/TimerSlice";
