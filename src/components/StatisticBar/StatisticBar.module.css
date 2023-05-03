@@ -1,0 +1,36 @@
+.StatisticBar {
+  display: flex;
+  width: 200px;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  position: relative;
+  color: rgb(147, 147, 198);
+  font-size: 30px;
+  font-weight: 700;
+  font-family: 'Sigmar';
+}
+
+
+.timer {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(4, 72, 50);
+  padding: 20px 20px;
+  border-radius: 20px;
+  margin: 10px 0;
+}
+
+.typePerMinutes {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(12, 48, 36);
+  padding: 20px 20px;
+  border-radius: 20px;
+}
