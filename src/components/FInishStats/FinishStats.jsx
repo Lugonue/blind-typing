@@ -8,6 +8,8 @@ import styles from "./finishStats.module.css";
 const FinishStats = () => {
   const typePerMinutes = useSelector(state => state.inputText.typePerMinute);
   const currentTime = useSelector(state => state.timer.currentTime);
+  const misses = useSelector(state => state.inputText.misses);
+  const inputText = useSelector(state => state.inputText.text);
 
 
 
@@ -20,6 +22,8 @@ const FinishStats = () => {
         <br />
         <hr />
         <p>Символов в минуту : {typePerMinutes}</p>
+        <hr />
+        <p>Точность : { inputText.lenght > 0 ? <span>{100 - ( misses / inputText.length * 100).toFixed(0)} %</span> : <span>0 %</span>}</p>
 
         {/* eslint-disable-next-line */}
         <button onClick={() => { location.reload() }}>Начать заново!</button>

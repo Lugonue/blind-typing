@@ -12,6 +12,7 @@ const StatisticBar = () => {
   const { status, startTime, currentTime } = useSelector(state => state.timer);
   const typePerMinutes = useSelector(state => state.inputText.typePerMinute);
   const inputText = useSelector(state => state.inputText.text);
+  const misses = useSelector(state => state.inputText.misses);
 
   useEffect(() => {
     const inputTextLength = inputText.length;
@@ -32,6 +33,10 @@ const StatisticBar = () => {
         <span>Символов в минуту</span>
         <br />
         <span>{typePerMinutes}</span>
+        <br />
+        <span>Точность</span>
+        <br />
+        { inputText.lenght > 0 ? <span>{100 - ( misses / inputText.length * 100).toFixed(0)} %</span> : <span>0 %</span>}
       </div>
     </div>
   )

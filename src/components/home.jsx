@@ -8,7 +8,9 @@ import StatisticBar from "./StatisticBar/StatisticBar";
 import StartButn from "./StartButn";
 import EndButn from "./EndButn";
 import FinishStats from "./FInishStats/FinishStats";
+
 import { setStopTimer } from "./StatisticBar/timer/TimerSlice";
+import {setMisses} from "../features/InputText/InputTextSlice.js";
 
 
 const Home = () => {
@@ -16,6 +18,7 @@ const Home = () => {
   const [alarm, setAlarm] = useState(false);
   const startText = useSelector(state => state.startText.text);
   const inputText = useSelector(state => state.inputText.text);
+  const misses = useSelector(state => state.inputText.misses);
   const {status} = useSelector(state => state.timer);
 
 useEffect(() => {
@@ -24,6 +27,8 @@ useEffect(() => {
   }
   if (!genDiff(startText, inputText)) {
     setAlarm(true);
+    if (misses > inputText.length) return
+    dispatch(setMisses())
     return;
   }
   setAlarm(false);
